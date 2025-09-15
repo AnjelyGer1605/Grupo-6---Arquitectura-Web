@@ -1,6 +1,14 @@
 <div align="center">
   <h1>CiviTrack - Tu Aliado en la Movilidad Urbana</h1>
   <br>
+  <h1> Integrantes</h1>
+  <p>
+    Nicole Alexandra Alca Guillen - u202317439
+    Adrian Jesus Moran Ynocente - u202221171
+    Anjely Luciana Geronimo Quispe - u20231f162
+    Katherine Naomi Meza Tupayachi - u202318726
+    Fernando Sebastian Benel Uchofen - u202314499
+  </p>
   <p>
     <strong>Acerca del Proyecto</strong><br><br>
     CiviTrack es una solución digital innovadora diseñada para transformar la experiencia de movilidad diaria de los estudiantes en ciudades con alto flujo vehicular.<br>
