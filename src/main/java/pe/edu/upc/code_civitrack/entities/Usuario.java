@@ -1,90 +1,84 @@
-package pe.edu.upc.code_civitrack.entities;
+package pe.edu.upc.demotrabajocivitrak.Entities;
 
 import jakarta.persistence.*;
-import java.time.LocalDate;
+
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "Usuario")
+@Table(name="Usuario")
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private int idUsuario;
-
-    @Column(nullable = false, length = 100)
+    @Column(name = "nombre", nullable = false, length = 50)
     private String nombre;
-
-    @Column(nullable = false)
-    private int telefono;
-
-    @Column(nullable = false, unique = true, length = 100)
+    @Column(name="correo", nullable = false, length = 50)
     private String correo;
-
-    @Column(nullable = false, length = 255)
-    private String contraseña;
-
-    @ManyToOne
-    @JoinColumn(name = "idRol", nullable = false)
-    private Rol rol;
-
-    @Column(nullable = false, length = 100)
-    private String universidad;
-
-    @Column(nullable = false)
-    private LocalDate fechaIngreso;
-
-    @Column(nullable = false)
-    private LocalDateTime fechaRegistro;
-
-
-    public Usuario(int idUsuario, String nombre, int telefono, String correo, String contraseña, Rol rol, String universidad, LocalDate fechaIngreso, LocalDateTime fechaRegistro) {
-        this.idUsuario = idUsuario;
-        this.nombre = nombre;
-        this.telefono = telefono;
-        this.correo = correo;
-        this.contraseña = contraseña;
-        this.rol = rol;
-        this.universidad = universidad;
-        this.fechaIngreso = fechaIngreso;
-        this.fechaRegistro = fechaRegistro;
-    }
+    @Column(name="password", nullable = false, length = 50)
+    private String password;
+    @Column(name="rol", nullable = false, length = 50)
+    private String rol;
+    @Column(name="fecharegistro", nullable = false)
+    private LocalDateTime fecharegistro;
 
     public Usuario() {
-
     }
 
+    public Usuario(String correo, LocalDateTime fecharegistro, int idUsuario, String nombre, String password, String rol) {
+        this.correo = correo;
+        this.fecharegistro = fecharegistro;
+        this.idUsuario = idUsuario;
+        this.nombre = nombre;
+        this.password = password;
+        this.rol = rol;
+    }
 
-    public int getIdUsuario() { return idUsuario; }
+    public String getCorreo() {
+        return correo;
+    }
 
-    public void setIdUsuario(int idUsuario) { this.idUsuario = idUsuario; }
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
 
-    public String getNombre() { return nombre; }
+    public LocalDateTime getFecharegistro() {
+        return fecharegistro;
+    }
 
-    public void setNombre(String nombre) { this.nombre = nombre; }
+    public void setFecharegistro(LocalDateTime fecharegistro) {
+        this.fecharegistro = fecharegistro;
+    }
 
-    public int getTelefono() { return telefono; }
+    public int getIdUsuario() {
+        return idUsuario;
+    }
 
-    public void setTelefono(int telefono) { this.telefono = telefono; }
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
+    }
 
-    public String getCorreo() { return correo; }
+    public String getNombre() {
+        return nombre;
+    }
 
-    public void setCorreo(String correo) { this.correo = correo; }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-    public String getContraseña() { return contraseña; }
+    public String getPassword() {
+        return password;
+    }
 
-    public void setContraseña(String contraseña) { this.contraseña = contraseña; }
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-    public Rol getRol() { return rol; }
-    public void setRol(Rol rol) { this.rol = rol; }
+    public String getRol() {
+        return rol;
+    }
 
-    public String getUniversidad() { return universidad; }
-    public void setUniversidad(String universidad) { this.universidad = universidad; }
-
-    public LocalDate getFechaIngreso() { return fechaIngreso; }
-    public void setFechaIngreso(LocalDate fechaIngreso) { this.fechaIngreso = fechaIngreso; }
-
-    public LocalDateTime getFechaRegistro() { return fechaRegistro; }
-    public void setFechaRegistro(LocalDateTime fechaRegistro) { this.fechaRegistro = fechaRegistro; }
+    public void setRol(String rol) {
+        this.rol = rol;
+    }
 }
-
-
