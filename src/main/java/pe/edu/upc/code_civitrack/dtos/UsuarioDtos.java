@@ -1,38 +1,16 @@
-package pe.edu.upc.demotrabajocivitrak.Entities;
+package pe.edu.upc.demotrabajocivitrak.Dtos;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
 
 import java.time.LocalDateTime;
 
-@Entity
-@Table(name="Usuario")
-public class Usuario {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-
+public class UsuarioDtos {
     private int idUsuario;
-    @Column(name = "nombre", nullable = false, length = 50)
     private String nombre;
-    @Column(name="correo", nullable = false, length = 50)
     private String correo;
-    @Column(name="password", nullable = false, length = 50)
     private String password;
-    @Column(name="rol", nullable = false, length = 50)
     private String rol;
-    @Column(name="fecharegistro", nullable = false)
     private LocalDateTime fecharegistro;
-
-    public Usuario() {
-    }
-
-    public Usuario(String correo, LocalDateTime fecharegistro, int idUsuario, String nombre, String password, String rol) {
-        this.correo = correo;
-        this.fecharegistro = fecharegistro;
-        this.idUsuario = idUsuario;
-        this.nombre = nombre;
-        this.password = password;
-        this.rol = rol;
-    }
 
     public String getCorreo() {
         return correo;
